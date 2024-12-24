@@ -16,3 +16,5 @@ const Heros = ["shaktiman", "naagraj", "doga"] //Arrays
 const myFunction = function(){ //functions
   console.log("Hello World");
 }
+
+// stack(Primitive) heap(Non-Primitive)
