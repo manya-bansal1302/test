@@ -23,4 +23,41 @@ const result = addTwoNumber(3,5)
 function loginUserMessage(username){
   return `${username} just logged in `
 }
-console.log(loginUserMessage("Manya"))
+//console.log(loginUserMessage("Manya"))
+
+//function  calculateCartPrice(...num1){ ///...rest Operator(multiple values kaise pass hoti hai)
+ // return num1
+//}
+//console.log(calculateCartPrice(200,400,500))
+
+function  calculateCartPrice(val1,val2,...num1){ 
+  return num1
+}
+//console.log(calculateCartPrice(200,400,500))
+
+
+const user = {
+  username:"manya",
+  price:199
+}
+
+function handleObject(anyObject){
+  //console.log(`Username is ${anyObject.username} and price is  ${anyObject.price} `);
+
+}
+//handleObject(user)
+handleObject({
+  username: "sam",
+  price: 199
+})
+
+
+const NewArray = [200,400,100,600]
+
+function returnSecondArray(getArray){
+  return getArray[1]
+}
+
+//way to call a function
+console.log(returnSecondArray(NewArray))
+console.log(returnSecondArray([200,400,500,1000]))
