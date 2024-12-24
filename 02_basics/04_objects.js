@@ -46,5 +46,16 @@ const User = [
 //console.log(User[0].id)
 
 //console.log(tinderUser)
-console.log(Object.keys(tinderUser))
-console.log(Object.values(tinderUser))
+//console.log(Object.keys(tinderUser))
+//console.log(Object.values(tinderUser)); 
+
+
+const course = {
+  courseName : "JavaScript",
+  price:"999",
+  courseInstructor:"Hitesh"
+}
+
+//const {courseInstructor} = course  //syntax to run the code
+const {courseInstructor:Instructor} = course  //if you want to change the name
+console.log(courseInstructor);
