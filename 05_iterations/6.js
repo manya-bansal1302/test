@@ -62,3 +62,6 @@ console.log(values)*/
 
 const userBooks = books.filter ((bk) => bk.publish >= 1982 && bk.genre === "history")
 console.log(userBooks)
+
+
+// in filter only true values are passed 
