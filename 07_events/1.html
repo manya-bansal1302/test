@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML_Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="mor-pankh"
+            src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-169994-674010.jpg&fm=jpg
+          "
+            alt="mor-pankh"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="nature1"
+            src="https://th.bing.com/th/id/OIG1.wQ7nqzXG6LLji1s3MrOP"
+            alt="nature1"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="nature"
+            src="https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp"
+            alt="nature"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="cat"
+            src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"
+            alt="cat"
+          />
+          <!-- onclick="alert('cat')"  (1st approch)-->
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    /*document.getElementById("cat").onclick = function () {
+      alert("cat clicked"); (2nd approach)
+    };*/
+
+    /* document.getElementById("cat").addEventListener("click", function () {
+      alert("owl clicked"); (3rd approach)
+    });*/
+
+    //event Object
+    /*document.getElementById("cat").addEventListener(
+      "click",
+      (e) => {
+        console.log(e);
+      },
+      false
+    );*/
+
+    //type , timestamp , defaultPrevented
+    //target , toElement , scrElement , currentElement
+    //clientX , clientY , screenX , screenY
+    //atlkey , ctrlkey , shiftkey , keycode
+
+    //event propagation(eventBubling(false)(default)(neeche se upar jata hai) , eventCapturing(true)(upar se neeche))
+
+    /*document.getElementById("images").addEventListener(
+      "click",
+      function (e) {
+        console.log("clicked inside the ul");
+      },
+      false
+    );*/
+    /* document.getElementById("cat").addEventListener(
+      "click",
+      function (e) {
+        console.log(" cat clicked");
+        e.stopPropagation(); //bubble hoke upar ke element pe nhi jayega
+      },
+      false
+    );*/
+
+    /*document.getElementById("google").addEventListener(
+      "click",
+      (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+      },
+      false
+    );*/
+    document.querySelector("#images").addEventListener("click", (e) => {
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+      //let removeIt = e.target.parentNode;
+      //removeIt.remove();
+      // removeIt.parentNode.removeChild(removeIt);
+    });
+  </script>
+</html>
